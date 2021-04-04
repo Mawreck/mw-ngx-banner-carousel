@@ -1,0 +1,15 @@
+<div class="carousel-container" [ngClass]="{
+	'carousel-is-mobile-disabled': isMobileDisabled
+}">
+    <ng-container *ngFor="let slide of slides; let i = index">
+        <img class="slide" alt="" *ngIf="i === currentSlide" [src]="slide.image" @carouselAnimation/>
+    </ng-container>
+
+    <button class="control prev" (click)="onPreviousClick()">
+        <span class="arrow left"></span>
+    </button>
+
+    <button class="control next" (click)="onNextClick()">
+        <span class="arrow right"></span>
+    </button>
+</div>
